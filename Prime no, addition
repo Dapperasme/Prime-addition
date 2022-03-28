@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+int prime(int x)
+{
+  
+  
+    int i;
+    int count=0;
+    for(i=1;i<x;i++)    
+     {
+         if (x%i==0)
+         {
+            count+=1;
+         }              
+    }
+    if (x<=1)
+    {
+        return 0;
+
+    }
+    else if (count>1)
+     {
+    return 1;
+
+    }
+    else
+    {
+        return 2;
+    }
+}
+int main()
+{
+    cout<<("Enter your desired number:\t");    //:input//
+    int x;
+    cin>>x;
+    int i;
+     for(i=2;i<x;i++)                        //:main function for addition of prime numbers//
+    {
+        if (prime(i)==2 && prime(x-i)==2)
+        {
+            printf("The sum of %d & %d is %d\n",i,x-i,x);     //:output//
+        }
+    }
+    return 0;
+}
